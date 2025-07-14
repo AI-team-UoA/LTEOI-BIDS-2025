@@ -1,0 +1,337 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LTEOI-2025</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <div class="navbar-brand d-flex flex-column">
+            <span >From Pixels to Answers: Leveraging TerraQ for Earth Observation Intelligence</span>
+            <small class="text-muted" style="font-size: 0.8rem;">
+                A satellite event of
+                <a href="https://www.bigdatafromspace2025.org/" class="text-decoration-underline">Big Data from Space 2025</a>
+            </small>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#overview-section">Overview</a></li>
+                <li class="nav-item"><a class="nav-link" href="#content-section">Content</a></li>
+                <li class="nav-item"><a class="nav-link" href="#schedule-section">Schedule</a></li>
+                <li class="nav-item"><a class="nav-link" href="#organizers-section">Organizers</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Overview Section -->
+<div id="overview-section" class="py-3 bg-light">   
+    <div class="container">
+        <div class="text-start mb">
+            <h2 class="fw-bold display-6">Satellite Event Overview</h2>
+            <p class="text-muted">
+                Recent advances in satellite technology have enabled frequent, high-resolution, and global-scale monitoring of the Earth. 
+                This explosion in the availability of Earth Observation (EO) data presents unprecedented opportunities to support critical societal challenges.
+                Artificial Intelligence, knowledge graphs, and semantic technologies are emerging as powerful enablers for bridging the gap between raw EO data and actionable insights.
+            </p>
+            <p class="text-muted">
+                LTEOI-2025 will walk participants through the full pipeline of building intelligent EO services—from ingesting raw satellite data to creating responsive, 
+                natural language-powered applications. The event is hands-on, enabling participants to learn by doing, while also offering a 
+                blueprint that can be replicated across other regions and domains.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Schedule Section -->
+<div id="schedule-section" class="py-3 bg-light">
+    <div class="container">
+        <div class="text-start mb">
+            <h2 class="fw-bold display-6">Schedule</h2>
+            <p class="text-muted">LTEOI-2025 is a half-day tutorial (3 hours), as seen in following schedule:</p>
+            <table class="table table-bordered table-hover table-striped align-middle">
+                <thead class="table-primary">
+                    <tr>
+                    <th scope="col">Time</th>
+                    <th scope="col">Session</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td>09:00 - 09:30</td>
+                    <td>
+                        <strong>Introduction</strong><br/>
+                        Welcome and introduction by the presenters.<br/>
+                        Presentation of tools and challenges to be demonstrated.<br/>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>09:30 - 10:30</td>
+                    <td>
+                        <strong>From Earth Observation Data to the Triple Store</strong><br/>
+                        Part 1: From Unstructured EO Data to RDF with Python<br/>
+                        Part 2: Storing and Querying RDF Data with GraphDB<br/>
+                    </td>
+                    </tr>
+                    <tr class="table-warning">
+                    <td>10:30 - 11:00</td>
+                    <td><strong>Coffee Break</strong></td>
+                    </tr>
+                    <tr>
+                    <td>11:00 - 11:40</td>
+                    <td>
+                        <strong>Pulling down the SPARQL barrier for RDF access</strong><br/>
+                        Part 3: Developing a Natural Language Interface by employing TerraQ-as-a-Service
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>11:40 - 12:00</td>
+                    <td>
+                        <strong>Visualization of results</strong><br/>
+                        Part 4: Visualizing Geospatial Results with Leaflet.js
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>12:00 - 12:20</td>
+                    <td>
+                        <strong>Optimizing for realtime performance</strong><br/>
+                        Part 5: Query execution optimization with JedAI-Spatial and GoST
+                    </td>
+                    </tr>
+                    <td>12:20 - 12:30</td>
+                    <td>
+                        <strong>Summary and discussion</strong><br/>
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Content Section -->
+<div id="content-section" class="py-3 bg-light">   
+    <div class="container">
+        <div class="text-start mb">
+            <h2 class="fw-bold display-6">Detailed Description of the Event</h2>
+            <p class="text-muted">
+                The tutorial will cover tools and methodologies to transform raw EO data into semi-structured RDF data which can be easily and efficiently queried by both novice and expert users.  
+                Although the tutorial will be grounded in a use case focused on France, the methodologies and tools presented are generalizable to EO scenarios across domains and geographies.
+            </p>
+            <h5>Part 1: From Unstructured EO Data to RDF with Python</h5>
+            <p class="text-muted">
+                Participants will begin by taking raw Earth Observation datasets (satellite images with accompanying metadata) and converting them into RDF format using a simple ontology. This transformation is performed using a custom semantic parsing library developed by our group, capable of extracting structured knowledge from unstructured EO data.
+                <br>
+                <strong>Tools:</strong> Sentinel-1 and Sentinel-2 parsing library in Python.
+            </p>
+            <h5>Part 2: Storing and Querying RDF Data with GraphDB</h5>
+            <p class="text-muted">
+                The newly-formed RDF data, along with geospatial data concerning administrative divisions and natural features, is loaded into GraphDB. In addition to the built-in GeoSPARQL support, we present a plug-in for supporting stSPARQL. These extensions allow the representation and querying of geometries (points, polygons, etc.) using geospatial functions, making GraphDB ideal for storing Earth observation data with spatial dimensions.
+                <br>
+                <strong>Tools:</strong> <a href="https://graphdb.ontotext.com/">GraphDB</a>, <a href="https://github.com/SKefalidis/graphdb-geosparql-stsparql-plugin/">stSPARQL extension</a>.
+            </p>
+            <h5>Part 3: Natural Language Interface by employing TerraQ-as-a-Service</h5>
+            <p class="text-muted">
+                Now that the RDF knowledge graph is operational, participants will integrate TerraQ, a Text-to-SPARQL system which provides a natural language interface for RDF stores. It does so by translating natural language questions into semantically equivalent SPARQL queries.  TerraQ is a Question-Answering engine that simplifies interaction with EO data, by removing the need for users to understand SPARQL.  As a result, EO data is made more easily accessible to users, while maintaining accuracy and computational efficiency.
+                <br>
+                <strong>Tools:</strong> <a href="https://terraq.di.uoa.gr/">TerraQ</a>
+            </p>
+            <h5>Part 4: Visualizing Geospatial Results with Leaflet.js</h5>
+            <p class="text-muted">
+                Until now, results are presented in a raw, CSV-like format. When dealing with satellite image data, it is of paramount importance to be able to see the images, and their visualizations on a map. 
+                We show how such functionality can be implemented using Leaflet.js, a lightweight and interactive JavaScript library for mapping. 
+                <br>
+                <strong>Tools:</strong> <a href="https://leafletjs.com/">Leaflet.js</a>
+            </p>
+            <h5>Part 5: Query execution optimization with JedAI-Spatial and GoST</h5>
+            <p class="text-muted">
+                For the last part of our tutorial we showcase the complexity of geospatial calculations when using large polygons. This results in long response times, making our system frustrating to use. 
+                To deal with this we employ geospatial interlinking and query rewriting to dramatically speed-up query execution.
+                <br>
+                <strong>Tools:</strong> <a href="https://github.com/AI-team-UoA/JedAI-spatial">JedAI-Spatial</a>, <a href="https://github.com/AI-team-UoA/GoST">GoST</a>
+            </p>
+        </div>
+        
+        <p class="text-muted fst-italic">
+            <strong>Note:</strong> Participants are encouraged to bring their own laptops to the event. This will enable them to follow along hands-on during the tutorial sessions and execute the code in real-time. 
+            Runnable code checkpoints will be provided a few days before the event to ensure that participants can easily set up their environments and follow the tutorial without any issues.
+        </p>
+    </div>
+</div>
+
+<!-- Organizers -->
+<div id="organizers-section" class="py-3 bg-light">
+    <div class="container">
+        <!-- Team Members Section -->
+        <div class="text-left">
+            <h2 class="fw-bold display-6">Organizers</h2>
+            <div class="container mb-4">
+                <!-- Team Member 1 -->
+                <div class="row align-items-center mb-4">
+                    <div class="col-md-2 text-center">
+                        <img src="./static/images/mkoubarakis.jpg" alt="Team Member 1" class="img-fluid rounded-circle" style="width: 150px; height: 150px; object-fit: cover;">
+                    </div>
+                    <div class="col-md-10">
+                        <h5 class="fw-bold">Manolis Koubarakis</h5>
+                        <p class="small fst-italic">Manolis Koubarakis is a Professor and Director of Graduate Studies in the <a href="https://www.di.uoa.gr/en">Dept. of Informatics and
+                        Telecommunications</a> of the <a href="https://en.uoa.gr/">National and Kapodistrian University of Athens</a>, where he directs the <a href="https://ai.di.uoa.gr/">AI Team</a>. 
+                        He is also an affiliated researcher of the <a href="https://archimedesai.gr/en/">Archimedes Unit</a>, 
+                        a Fellow of <a href="https://www.eurai.org/">EurAI</a> since 2015 and Member of the EurAI Board since 2022. 
+                        He has published more than 250 papers that have
+                        been widely cited (8973 citations and h-index 52 in Google Scholar) in the areas of Artificial Intelligence
+                        (especially Knowledge Representation and Constraint Programming), Databases (especially temporal and
+                        spatial databases), Semantic Web, Knowledge Graphs and Linked Data (especially geospatial and Earth
+                        observation data), and Deep Learning for Natural Language Processing. Manolis has taught at university
+                        level since 1995 and is a recognized AI researcher in spatial reasoning, geospatial databases, and knowledge
+                        graphs. He has given many tutorials and has led many laboratories for undegraduate and graduate courses.</p>
+                        <!-- Links -->
+                        <div class="mt-2">
+                            <a href="https://cgi.di.uoa.gr/~koubarak/" target="_blank" class="me-3 text-decoration-none">
+                                <i class="fas fa-globe me-1"></i>Website
+                            </a>
+                            <a href="https://scholar.google.com/citations?user=FKy2868AAAAJ&hl" target="_blank" class="me-3 text-decoration-none">
+                                <i class="fas fa-graduation-cap me-1"></i>Google Scholar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="row align-items-center mb-4">
+                    <div class="col-md-2 text-center">
+                        <img src="./static/images/skefalidis.jpeg" alt="Team Member 2" class="img-fluid rounded-circle" style="width: 150px; height: 150px; object-fit: cover;">
+                    </div>
+                    <div class="col-md-10">
+                        <h5 class="fw-bold">Sergios-Anestis Kefalidis</h5>
+                        <p class="small fst-italic">Sergios-Anestis Kefalidis is a Ph.D. student and Research Assistant in the <a href="https://ai.di.uoa.gr/">AI Team</a> of the 
+                        <a href="https://en.uoa.gr/">National and Kapodistrian University of Athens</a>. 
+                        He holds a B.Sc. and a MSc. in Computer Science from the National and Kapodistrian University of Athens. 
+                        He has actively participated in multiple European research
+                        projects (DA4DTE, GeoQA, STELAR). His research focuses on universal question-answering over knowledge graphs and
+                         applications for geospatial question-answering systems. His Ph.D. research is supported
+                        by the “NIK. D. XRYSOVERGI” scholarship of the <a href="https://www.iky.gr/en/">Greek State Scholarship Foundation</a>. Before his involvement with the AI Team, 
+                        during his undergraduate studies, he participated in <a href="https://summerofcode.withgoogle.com/">Google Summer of
+                        Code</a> 2020, 2021 and 2022. During this time he was an active contributor of open-source software and
+                        has even served as a core developer and maintainer for the widely used <a href="https://xfce.org/">Xfce</a> desktop-environment for
+                        UNIX-like systems.</p>
+                        <!-- Links -->
+                        <div class="mt-2">
+                            <a href="http://users.uoa.gr/~skefalidis/" target="_blank" class="me-3 text-decoration-none">
+                                <i class="fas fa-globe me-1"></i>Website
+                            </a>
+                            <a href="https://scholar.google.com/citations?user=ApgfDoYAAAAJ&hl" target="_blank" class="me-3 text-decoration-none">
+                                <i class="fas fa-graduation-cap me-1"></i>Google Scholar
+                            </a>
+                            <a href="https://github.com/skefalidis" target="_blank" class="me-3 text-decoration-none">
+                                <i class="fab fa-github me-1"></i>GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="row align-items-center mb-4">
+                    <div class="col-md-2 text-center">
+                        <img src="./static/images/kplas.jpeg" alt="Team Member 3" class="img-fluid rounded-circle" style="width: 150px; height: 150px; object-fit: cover;">
+                    </div>
+                    <div class="col-md-10">
+                        <h5 class="fw-bold">Kostas Plas</h5>
+                        <p class="small fst-italic">Kostas Plas is a Ph.D. student and Research Assistant in the <a href="https://ai.di.uoa.gr/">AI Team</a> of the 
+                        <a href="https://en.uoa.gr/">National and Kapodistrian University of Athens</a>. 
+                        He holds a BSc. and a MSc. in Computer Science from the National and Kapodistrian
+                        University of Athens. His research focuses on optimizing graph databases and geospatial triple stores as
+                        well as spatial reasoning in LLMs. His Ph.D. is supported by the scholarship with code “GD.402. ARCHI-YPPhD-0824” 
+                        from the <a href="https://archimedesai.gr/en/">Archimedes Research Unit</a>. He has gathered experience in geospatial knowledge
+                        graph and knowledge graph augmentation and manipulation through the usage of LLMs in his participation on the European projects DA4DTE and STELAR.</p>
+                        <!-- Links -->
+                        <div class="mt-2">
+                            <a href="https://www.linkedin.com/in/kostas-plas-a0229120b/" target="_blank" class="me-3 text-decoration-none">
+                                <i class="fas fa-globe me-1"></i>Website
+                            </a>
+                            <a href="https://scholar.google.com/citations?user=5-ZgRNIAAAAJ&hl" target="_blank" class="me-3 text-decoration-none">
+                                <i class="fas fa-graduation-cap me-1"></i>Google Scholar
+                            </a>
+                            <a href="https://github.com/KwtsPls" target="_blank" class="me-3 text-decoration-none">
+                                <i class="fab fa-github me-1"></i>GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 4 -->
+                <div class="row align-items-center mb-4">
+                    <div class="col-md-2 text-center">
+                        <img src="./static/images/dpantazi.jpg" alt="Team Member 4" class="img-fluid rounded-circle" style="width: 150px; height: 150px; object-fit: cover;">
+                    </div>
+                    <div class="col-md-10">
+                        <h5 class="fw-bold">Despina-Athanasia Pantazi</h5>
+                        <p class="small fst-italic">Despina-Athanasia Pantazi is a Research Associate in the <a href="https://www.di.uoa.gr/en">Dept. of Informatics and
+                            Telecommunications</a> at the 
+                            <a href="https://en.uoa.gr/">National and Kapodistrian University of Athens</a>, and a PhD candidate under the supervision of Professor Manolis Koubarakis. 
+                            She holds a B.Sc. and M.Sc. from the Dept. of Informatics and Telecommunications of the National and Kapodistrian University of Athens.
+                            Her research interests focus on the area of Artificial Intelligence, especially in the fields of Natural Language Processing, 
+                            Machine Learning, and Semantic Web. She contributed to the development of numerous Large Language Models (LLMs) 
+                            such as the GreekLegalBERT model, and her PhD research focuses on the development of new improved methods for the efficient finetuning of state of the art LLMs. 
+                            She also gained research experience relevant to the Earth Observation (EO) field as she participated in several European projects 
+                            (Copernicus App Lab, ExtremeEarth, AI4Copernicus) over the last eight years.</p>
+                        <!-- Links -->
+                        <div class="mt-2">
+                            <a href="https://cgi.di.uoa.gr/~dpantazi/" target="_blank" class="me-3 text-decoration-none">
+                                <i class="fas fa-globe me-1"></i>Website
+                            </a>
+                            <a href="https://scholar.google.com/citations?user=d7NOioYAAAAJ&hl=en" target="_blank" class="me-3 text-decoration-none">
+                                <i class="fas fa-graduation-cap me-1"></i>Google Scholar
+                            </a>
+                            <a href="https://github.com/despinapz" target="_blank" class="me-3 text-decoration-none">
+                                <i class="fab fa-github me-1"></i>GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 5 -->
+                <div class="row align-items-center mb-4">
+                    <div class="col-md-2 text-center">
+                        <img src="./static/images/gstam.jpg" alt="Team Member 4" class="img-fluid rounded-circle" style="width: 150px; height: 150px; object-fit: cover;">
+                    </div>
+                    <div class="col-md-10">
+                        <h5 class="fw-bold">George Stamoulis</h5>
+                        <p class="small fst-italic">George Stamoulis is a research associate in the <a href="https://www.di.uoa.gr/en">Dept. of Informatics and
+                            Telecommunications</a> at the 
+                            <a href="https://en.uoa.gr/">National and Kapodistrian University of Athens</a> 
+                            and a PhD candidate under the supervision of Prof. Koubarakis. He holds a B.Sc. and M.Sc. from the 
+                            Department of Informatics and Telecommunications of the National and Kapodistrian University of Athens. 
+                            He has worked in several European projects, building systems and applications over Earth Observation data, using Semantic Web technologies. 
+                            His research interests focus in the areas of Semantic Web, Data Visualization and Integration and User Interfaces. 
+                            He has contributed to various tutorials presenting Semantic Web technologies for Earth Observation data.</p>
+                        <!-- Links -->
+                        <div class="mt-2">
+                            <a href="https://cgi.di.uoa.gr/~gstam/" target="_blank" class="me-3 text-decoration-none">
+                                <i class="fas fa-globe me-1"></i>Website
+                            </a>
+                            <a href="https://scholar.google.com/citations?user=uDKBznUAAAAJ&hl=en" target="_blank" class="me-3 text-decoration-none">
+                                <i class="fas fa-graduation-cap me-1"></i>Google Scholar
+                            </a>
+                            <a href="https://github.com/zefyros" target="_blank" class="me-3 text-decoration-none">
+                                <i class="fab fa-github me-1"></i>GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
