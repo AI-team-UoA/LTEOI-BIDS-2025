@@ -1,0 +1,191 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix  rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@base <http://geotriples.eu/base> .
+@prefix rrx: <http://www.w3.org/ns/r2rml-ext#>.
+@prefix rrxf: <http://www.w3.org/ns/r2rml-ext/functions/def/>.
+@prefix ogc: <http://www.opengis.net/ont/geosparql#>.
+@prefix schema: <http://schema.org/>.
+@prefix onto: <https://example.org/ontology/>.
+@prefix resource: <https://example.org/resource/>.
+
+
+<#properties0>  a rr:TriplesMap;
+rml:logicalSource [
+        rml:source "./geojsons/_9466f66829f16035df489f256eed1cdbhamburg_s2.geojson";
+        rml:iterator "$.features[*].properties";
+        rml:referenceFormulation ql:JSONPath;
+];
+rr:subjectMap [
+    rr:template "https://example.org/resource/{_pyrml_mapper_generated_id}";
+	rr:class onto:properties;
+];
+
+rr:predicateObjectMap [
+	rr:predicate  onto:hasWaterPercentage ;
+	rr:objectMap [
+		rml:reference "hasWaterPercentage";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:hasNotVegetatedPercentage ;
+	rr:objectMap [
+		rml:reference "hasNotVegetatedPercentage";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:hasThumbnail ;
+	rr:objectMap [
+		rml:reference "hasThumbnail";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:_pyrml_mapper_generated_id ;
+	rr:objectMap [
+		rml:reference "_pyrml_mapper_generated_id";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:hasProductType ;
+	rr:objectMap [
+		rml:reference "hasProductType";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:hasMediumProbaCloudsPercentage ;
+	rr:objectMap [
+		rml:reference "hasMediumProbaCloudsPercentage";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:hasUnclassifiedPercentage ;
+	rr:objectMap [
+		rml:reference "hasUnclassifiedPercentage";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:hasVegetationPercentage ;
+	rr:objectMap [
+		rml:reference "hasVegetationPercentage";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:hasCloudCover ;
+	rr:objectMap [
+		rml:reference "hasCloudCover";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:hasPlatform ;
+	rr:objectMap [
+		rml:reference "hasPlatform";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:inConstellation ;
+	rr:objectMap [
+		rml:reference "inConstellation";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:hasTimestamp ;
+	rr:objectMap [
+		rml:reference "hasTimestamp";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:hasSnowIcePercentage ;
+	rr:objectMap [
+		rml:reference "hasSnowIcePercentage";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:hasTimeliness ;
+	rr:objectMap [
+		rml:reference "hasTimeliness";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:hasSunAzimuth ;
+	rr:objectMap [
+		rml:reference "hasSunAzimuth";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:type ;
+	rr:objectMap [
+		rml:reference "type";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:hasThinCirrusPercentage ;
+	rr:objectMap [
+		rml:reference "hasThinCirrusPercentage";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:derivedFrom ;
+	rr:objectMap [
+		rml:reference "derivedFrom";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:hasLicense ;
+	rr:objectMap [
+		rml:reference "hasLicense";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:_pyrml_mapper_parent_id ;
+	rr:objectMap [
+		rml:reference "_pyrml_mapper_parent_id";
+	];
+].
+
+<#FeatureMap>  a rr:TriplesMap;
+rml:logicalSource [
+        rml:source "./geojsons/_9466f66829f16035df489f256eed1cdbhamburg_s2.geojson";
+        rml:iterator "$.features[*]";
+        rml:referenceFormulation ql:JSONPath;
+];
+rr:subjectMap [
+    rr:template "https://example.org/resource/{_pyrml_mapper_generated_id}";
+	rr:class onto:sentinel2
+];
+
+rr:predicateObjectMap [
+	rr:predicate  onto:hasGeometry ;
+	rr:objectMap [
+		rr:template "https://example.org/resource/Geometry{_pyrml_mapper_generated_id}";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:propertiesLink ;
+	rr:objectMap [
+		rr:parentTriplesMap <#properties0>;
+		rr:joinCondition [
+			rr:child  "_pyrml_mapper_generated_id" ;
+			rr:parent "_pyrml_mapper_parent_id" ;
+		];
+	];
+].
+
+<#GeometryMap>  a rr:TriplesMap;
+rml:logicalSource [
+        rml:source "./geojsons/_9466f66829f16035df489f256eed1cdbhamburg_s2.geojson";
+        rml:iterator "$.features[*]";
+        rml:referenceFormulation ql:JSONPath;
+];
+rr:subjectMap [
+    rr:template "https://example.org/resource/Geometry{_pyrml_mapper_generated_id}";
+];
+
+rr:predicateObjectMap [
+	rr:predicate  ogc:asWKT ;
+	rr:objectMap [
+		rml:reference "geometry";
+		rr:datatype ogc:wktLiteral;
+	];
+].
+

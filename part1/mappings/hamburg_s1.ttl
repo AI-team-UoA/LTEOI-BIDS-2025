@@ -1,0 +1,131 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix  rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@base <http://geotriples.eu/base> .
+@prefix rrx: <http://www.w3.org/ns/r2rml-ext#>.
+@prefix rrxf: <http://www.w3.org/ns/r2rml-ext/functions/def/>.
+@prefix ogc: <http://www.opengis.net/ont/geosparql#>.
+@prefix schema: <http://schema.org/>.
+@prefix onto: <https://example.org/ontology/>.
+@prefix resource: <https://example.org/resource/>.
+
+
+<#properties0>  a rr:TriplesMap;
+rml:logicalSource [
+        rml:source "./geojsons/_ce660c4913ec548966d1fb1ecd9dd1d3hamburg_s1.geojson";
+        rml:iterator "$.features[*].properties";
+        rml:referenceFormulation ql:JSONPath;
+];
+rr:subjectMap [
+    rr:template "https://example.org/resource/{_pyrml_mapper_generated_id}";
+	rr:class onto:properties;
+];
+
+rr:predicateObjectMap [
+	rr:predicate  onto:hasPlatform ;
+	rr:objectMap [
+		rml:reference "hasPlatform";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:type ;
+	rr:objectMap [
+		rml:reference "type";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:hasProcessingLevel ;
+	rr:objectMap [
+		rml:reference "hasProcessingLevel";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:hasTimestamp ;
+	rr:objectMap [
+		rml:reference "hasTimestamp";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:hasVerticalVertical ;
+	rr:objectMap [
+		rml:reference "hasVerticalVertical";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:_pyrml_mapper_generated_id ;
+	rr:objectMap [
+		rml:reference "_pyrml_mapper_generated_id";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:hasProductType ;
+	rr:objectMap [
+		rml:reference "hasProductType";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:hasVerticalHorizontal ;
+	rr:objectMap [
+		rml:reference "hasVerticalHorizontal";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:hasInterferometricWide ;
+	rr:objectMap [
+		rml:reference "hasInterferometricWide";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:_pyrml_mapper_parent_id ;
+	rr:objectMap [
+		rml:reference "_pyrml_mapper_parent_id";
+	];
+].
+
+<#FeatureMap>  a rr:TriplesMap;
+rml:logicalSource [
+        rml:source "./geojsons/_ce660c4913ec548966d1fb1ecd9dd1d3hamburg_s1.geojson";
+        rml:iterator "$.features[*]";
+        rml:referenceFormulation ql:JSONPath;
+];
+rr:subjectMap [
+    rr:template "https://example.org/resource/{_pyrml_mapper_generated_id}";
+	rr:class onto:sentinel1
+];
+
+rr:predicateObjectMap [
+	rr:predicate  onto:hasGeometry ;
+	rr:objectMap [
+		rr:template "https://example.org/resource/Geometry{_pyrml_mapper_generated_id}";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:propertiesLink ;
+	rr:objectMap [
+		rr:parentTriplesMap <#properties0>;
+		rr:joinCondition [
+			rr:child  "_pyrml_mapper_generated_id" ;
+			rr:parent "_pyrml_mapper_parent_id" ;
+		];
+	];
+].
+
+<#GeometryMap>  a rr:TriplesMap;
+rml:logicalSource [
+        rml:source "./geojsons/_ce660c4913ec548966d1fb1ecd9dd1d3hamburg_s1.geojson";
+        rml:iterator "$.features[*]";
+        rml:referenceFormulation ql:JSONPath;
+];
+rr:subjectMap [
+    rr:template "https://example.org/resource/Geometry{_pyrml_mapper_generated_id}";
+];
+
+rr:predicateObjectMap [
+	rr:predicate  ogc:asWKT ;
+	rr:objectMap [
+		rml:reference "geometry";
+		rr:datatype ogc:wktLiteral;
+	];
+].
+

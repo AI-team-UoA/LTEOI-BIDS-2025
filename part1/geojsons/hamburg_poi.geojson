@@ -1,0 +1,36 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.979228498387096,
+          53.55638368037634
+        ]
+      },
+      "properties": {
+        "type": "poi",
+        "hasGADM_Name": "Planten un Blomen",
+        "wikilink": "Q494440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.935388311764706,
+          53.547034947058826
+        ]
+      },
+      "properties": {
+        "type": "poi",
+        "isInCity": "Hamburg",
+        "hasGADM_Name": "Bezirksamt Altona",
+        "wikilink": "Q444036"
+      }
+    }
+  ]
+}
