@@ -7,8 +7,8 @@
 @prefix rrxf: <http://www.w3.org/ns/r2rml-ext/functions/def/>.
 @prefix ogc: <http://www.opengis.net/ont/geosparql#>.
 @prefix schema: <http://schema.org/>.
-@prefix onto: <https://example.org/ontology/>.
-@prefix resource: <https://example.org/resource/>.
+@prefix onto: <https://ai-team-uoa.github.io/LTEOI-BIDS-2025/ontology/>.
+@prefix resource: <https://ai-team-uoa.github.io/LTEOI-BIDS-2025/resource/>.
 
 
 <#properties0>  a rr:TriplesMap;
@@ -82,7 +82,7 @@ rr:subjectMap [
 ];
 
 rr:predicateObjectMap [
-	rr:predicate  onto:hasGeometry ;
+	rr:predicate  ogc:hasGeometry ;
 	rr:objectMap [
 		rr:template "https://example.org/resource/Geometry{_pyrml_mapper_generated_id}";
 	];

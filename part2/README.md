@@ -112,7 +112,7 @@ select distinct ?s2 where {
 } limit 100
 ```
 
-2.4 Find all Sentinel-1 images that intersect with Sentinel-2 images and rivers
+2.4 Find all Sentinel-1 images that intersect with rivers and points of interest
 
 ```sparql
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -128,14 +128,14 @@ select distinct ?s1 where {
     ?s1 geo:hasGeometry ?g1 .
     ?g1 geo:asWKT ?wkt1 .
     
-    ?s2 rdf:type onto:sentinel2 .
-    ?s2 geo:hasGeometry ?g2 .
-    ?g2 geo:asWKT ?wkt2 .
+    ?s_poi rdf:type onto:poi .
+    ?s_poi geo:hasGeometry ?g_poi .
+    ?g_poi geo:asWKT ?wkt_poi .
     
     ?river rdf:type onto:river .
     ?river geo:hasGeometry ?g_river .
     ?g_river geo:asWKT ?wkt_river .
     
-    FILTER(geof:sfIntersects(?wkt1, ?wkt2) && geof:sfIntersects(?wkt1,?wkt_river))
+    FILTER(geof:sfIntersects(?wkt1, ?wkt_poi) && geof:sfIntersects(?wkt1,?wkt_river))
 }
 ```
