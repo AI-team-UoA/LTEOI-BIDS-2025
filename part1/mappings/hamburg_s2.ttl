@@ -18,32 +18,44 @@ rml:logicalSource [
         rml:referenceFormulation ql:JSONPath;
 ];
 rr:subjectMap [
-    rr:template "https://example.org/resource/{_pyrml_mapper_generated_id}";
+    rr:template "https://ai-team-uoa.github.io/LTEOI-BIDS-2025/resource/{9466f66829f16035df489f256eed1cdb_pyrml_mapper_generated_id}";
 	rr:class onto:properties;
 ];
 
 rr:predicateObjectMap [
-	rr:predicate  onto:hasWaterPercentage ;
+	rr:predicate  onto:hasSunAzimuth ;
 	rr:objectMap [
-		rml:reference "hasWaterPercentage";
+		rml:reference "hasSunAzimuth";
 	];
 ];
 rr:predicateObjectMap [
-	rr:predicate  onto:hasNotVegetatedPercentage ;
+	rr:predicate  onto:9466f66829f16035df489f256eed1cdb_pyrml_mapper_parent_id ;
 	rr:objectMap [
-		rml:reference "hasNotVegetatedPercentage";
+		rml:reference "9466f66829f16035df489f256eed1cdb_pyrml_mapper_parent_id";
 	];
 ];
 rr:predicateObjectMap [
-	rr:predicate  onto:hasThumbnail ;
+	rr:predicate  onto:hasMediumProbaCloudsPercentage ;
 	rr:objectMap [
-		rml:reference "hasThumbnail";
+		rml:reference "hasMediumProbaCloudsPercentage";
 	];
 ];
 rr:predicateObjectMap [
-	rr:predicate  onto:_pyrml_mapper_generated_id ;
+	rr:predicate  onto:9466f66829f16035df489f256eed1cdb_pyrml_mapper_generated_id ;
 	rr:objectMap [
-		rml:reference "_pyrml_mapper_generated_id";
+		rml:reference "9466f66829f16035df489f256eed1cdb_pyrml_mapper_generated_id";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:hasLicense ;
+	rr:objectMap [
+		rml:reference "hasLicense";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:derivedFrom ;
+	rr:objectMap [
+		rml:reference "derivedFrom";
 	];
 ];
 rr:predicateObjectMap [
@@ -53,9 +65,33 @@ rr:predicateObjectMap [
 	];
 ];
 rr:predicateObjectMap [
-	rr:predicate  onto:hasMediumProbaCloudsPercentage ;
+	rr:predicate  onto:hasTimeliness ;
 	rr:objectMap [
-		rml:reference "hasMediumProbaCloudsPercentage";
+		rml:reference "hasTimeliness";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:hasWaterPercentage ;
+	rr:objectMap [
+		rml:reference "hasWaterPercentage";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:hasTimestamp ;
+	rr:objectMap [
+		rml:reference "hasTimestamp";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:inConstellation ;
+	rr:objectMap [
+		rml:reference "inConstellation";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:hasSnowIcePercentage ;
+	rr:objectMap [
+		rml:reference "hasSnowIcePercentage";
 	];
 ];
 rr:predicateObjectMap [
@@ -71,51 +107,21 @@ rr:predicateObjectMap [
 	];
 ];
 rr:predicateObjectMap [
+	rr:predicate  onto:hasThumbnail ;
+	rr:objectMap [
+		rml:reference "hasThumbnail";
+	];
+];
+rr:predicateObjectMap [
 	rr:predicate  onto:hasCloudCover ;
 	rr:objectMap [
 		rml:reference "hasCloudCover";
 	];
 ];
 rr:predicateObjectMap [
-	rr:predicate  onto:hasPlatform ;
+	rr:predicate  onto:hasNotVegetatedPercentage ;
 	rr:objectMap [
-		rml:reference "hasPlatform";
-	];
-];
-rr:predicateObjectMap [
-	rr:predicate  onto:inConstellation ;
-	rr:objectMap [
-		rml:reference "inConstellation";
-	];
-];
-rr:predicateObjectMap [
-	rr:predicate  onto:hasTimestamp ;
-	rr:objectMap [
-		rml:reference "hasTimestamp";
-	];
-];
-rr:predicateObjectMap [
-	rr:predicate  onto:hasSnowIcePercentage ;
-	rr:objectMap [
-		rml:reference "hasSnowIcePercentage";
-	];
-];
-rr:predicateObjectMap [
-	rr:predicate  onto:hasTimeliness ;
-	rr:objectMap [
-		rml:reference "hasTimeliness";
-	];
-];
-rr:predicateObjectMap [
-	rr:predicate  onto:hasSunAzimuth ;
-	rr:objectMap [
-		rml:reference "hasSunAzimuth";
-	];
-];
-rr:predicateObjectMap [
-	rr:predicate  onto:type ;
-	rr:objectMap [
-		rml:reference "type";
+		rml:reference "hasNotVegetatedPercentage";
 	];
 ];
 rr:predicateObjectMap [
@@ -125,21 +131,15 @@ rr:predicateObjectMap [
 	];
 ];
 rr:predicateObjectMap [
-	rr:predicate  onto:derivedFrom ;
+	rr:predicate  onto:hasPlatform ;
 	rr:objectMap [
-		rml:reference "derivedFrom";
+		rml:reference "hasPlatform";
 	];
 ];
 rr:predicateObjectMap [
-	rr:predicate  onto:hasLicense ;
+	rr:predicate  onto:type ;
 	rr:objectMap [
-		rml:reference "hasLicense";
-	];
-];
-rr:predicateObjectMap [
-	rr:predicate  onto:_pyrml_mapper_parent_id ;
-	rr:objectMap [
-		rml:reference "_pyrml_mapper_parent_id";
+		rml:reference "type";
 	];
 ].
 
@@ -150,14 +150,14 @@ rml:logicalSource [
         rml:referenceFormulation ql:JSONPath;
 ];
 rr:subjectMap [
-    rr:template "https://example.org/resource/{_pyrml_mapper_generated_id}";
+    rr:template "https://ai-team-uoa.github.io/LTEOI-BIDS-2025/resource/{9466f66829f16035df489f256eed1cdb_pyrml_mapper_generated_id}";
 	rr:class onto:sentinel2
 ];
 
 rr:predicateObjectMap [
 	rr:predicate  ogc:hasGeometry ;
 	rr:objectMap [
-		rr:template "https://example.org/resource/Geometry{_pyrml_mapper_generated_id}";
+		rr:template "https://ai-team-uoa.github.io/LTEOI-BIDS-2025/resource/Geometry{_pyrml_mapper_generated_id}";
 	];
 ];
 rr:predicateObjectMap [
@@ -165,8 +165,8 @@ rr:predicateObjectMap [
 	rr:objectMap [
 		rr:parentTriplesMap <#properties0>;
 		rr:joinCondition [
-			rr:child  "_pyrml_mapper_generated_id" ;
-			rr:parent "_pyrml_mapper_parent_id" ;
+			rr:child  "9466f66829f16035df489f256eed1cdb_pyrml_mapper_generated_id" ;
+			rr:parent "9466f66829f16035df489f256eed1cdb_pyrml_mapper_parent_id" ;
 		];
 	];
 ].
@@ -178,7 +178,7 @@ rml:logicalSource [
         rml:referenceFormulation ql:JSONPath;
 ];
 rr:subjectMap [
-    rr:template "https://example.org/resource/Geometry{_pyrml_mapper_generated_id}";
+    rr:template "https://ai-team-uoa.github.io/LTEOI-BIDS-2025/resource/Geometry{9466f66829f16035df489f256eed1cdb_pyrml_mapper_generated_id}";
 ];
 
 rr:predicateObjectMap [

@@ -11,7 +11,7 @@ def change_to_nt(file_path, ext):
     return os.path.join(output_dir, base + f".{ext}")
 
 #Create a default mapping generator object
-generator = DefaultMappingGenerator()
+generator = DefaultMappingGenerator(ontology_uri, resource_uri)
 
 # Iterate throught the directory with the json files
 directory_in_str = "./geojsons/"

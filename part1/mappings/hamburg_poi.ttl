@@ -18,14 +18,14 @@ rml:logicalSource [
         rml:referenceFormulation ql:JSONPath;
 ];
 rr:subjectMap [
-    rr:template "https://example.org/resource/{_pyrml_mapper_generated_id}";
+    rr:template "https://ai-team-uoa.github.io/LTEOI-BIDS-2025/resource/{7ee82c0188668588a605614621fc3804_pyrml_mapper_generated_id}";
 	rr:class onto:properties;
 ];
 
 rr:predicateObjectMap [
-	rr:predicate  onto:type ;
+	rr:predicate  onto:7ee82c0188668588a605614621fc3804_pyrml_mapper_parent_id ;
 	rr:objectMap [
-		rml:reference "type";
+		rml:reference "7ee82c0188668588a605614621fc3804_pyrml_mapper_parent_id";
 	];
 ];
 rr:predicateObjectMap [
@@ -35,21 +35,21 @@ rr:predicateObjectMap [
 	];
 ];
 rr:predicateObjectMap [
+	rr:predicate  onto:7ee82c0188668588a605614621fc3804_pyrml_mapper_generated_id ;
+	rr:objectMap [
+		rml:reference "7ee82c0188668588a605614621fc3804_pyrml_mapper_generated_id";
+	];
+];
+rr:predicateObjectMap [
 	rr:predicate  onto:hasGADM_Name ;
 	rr:objectMap [
 		rml:reference "hasGADM_Name";
 	];
 ];
 rr:predicateObjectMap [
-	rr:predicate  onto:_pyrml_mapper_generated_id ;
+	rr:predicate  onto:type ;
 	rr:objectMap [
-		rml:reference "_pyrml_mapper_generated_id";
-	];
-];
-rr:predicateObjectMap [
-	rr:predicate  onto:_pyrml_mapper_parent_id ;
-	rr:objectMap [
-		rml:reference "_pyrml_mapper_parent_id";
+		rml:reference "type";
 	];
 ].
 
@@ -60,14 +60,14 @@ rml:logicalSource [
         rml:referenceFormulation ql:JSONPath;
 ];
 rr:subjectMap [
-    rr:template "https://example.org/resource/{_pyrml_mapper_generated_id}";
+    rr:template "https://ai-team-uoa.github.io/LTEOI-BIDS-2025/resource/{7ee82c0188668588a605614621fc3804_pyrml_mapper_generated_id}";
 	rr:class onto:poi
 ];
 
 rr:predicateObjectMap [
 	rr:predicate  ogc:hasGeometry ;
 	rr:objectMap [
-		rr:template "https://example.org/resource/Geometry{_pyrml_mapper_generated_id}";
+		rr:template "https://ai-team-uoa.github.io/LTEOI-BIDS-2025/resource/Geometry{_pyrml_mapper_generated_id}";
 	];
 ];
 rr:predicateObjectMap [
@@ -75,8 +75,8 @@ rr:predicateObjectMap [
 	rr:objectMap [
 		rr:parentTriplesMap <#properties0>;
 		rr:joinCondition [
-			rr:child  "_pyrml_mapper_generated_id" ;
-			rr:parent "_pyrml_mapper_parent_id" ;
+			rr:child  "7ee82c0188668588a605614621fc3804_pyrml_mapper_generated_id" ;
+			rr:parent "7ee82c0188668588a605614621fc3804_pyrml_mapper_parent_id" ;
 		];
 	];
 ].
@@ -88,7 +88,7 @@ rml:logicalSource [
         rml:referenceFormulation ql:JSONPath;
 ];
 rr:subjectMap [
-    rr:template "https://example.org/resource/Geometry{_pyrml_mapper_generated_id}";
+    rr:template "https://ai-team-uoa.github.io/LTEOI-BIDS-2025/resource/Geometry{7ee82c0188668588a605614621fc3804_pyrml_mapper_generated_id}";
 ];
 
 rr:predicateObjectMap [

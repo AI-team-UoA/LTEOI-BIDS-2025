@@ -18,32 +18,14 @@ rml:logicalSource [
         rml:referenceFormulation ql:JSONPath;
 ];
 rr:subjectMap [
-    rr:template "https://example.org/resource/{_pyrml_mapper_generated_id}";
+    rr:template "https://ai-team-uoa.github.io/LTEOI-BIDS-2025/resource/{ce660c4913ec548966d1fb1ecd9dd1d3_pyrml_mapper_generated_id}";
 	rr:class onto:properties;
 ];
 
 rr:predicateObjectMap [
-	rr:predicate  onto:hasPlatform ;
+	rr:predicate  onto:hasInterferometricWide ;
 	rr:objectMap [
-		rml:reference "hasPlatform";
-	];
-];
-rr:predicateObjectMap [
-	rr:predicate  onto:type ;
-	rr:objectMap [
-		rml:reference "type";
-	];
-];
-rr:predicateObjectMap [
-	rr:predicate  onto:hasProcessingLevel ;
-	rr:objectMap [
-		rml:reference "hasProcessingLevel";
-	];
-];
-rr:predicateObjectMap [
-	rr:predicate  onto:hasTimestamp ;
-	rr:objectMap [
-		rml:reference "hasTimestamp";
+		rml:reference "hasInterferometricWide";
 	];
 ];
 rr:predicateObjectMap [
@@ -53,15 +35,21 @@ rr:predicateObjectMap [
 	];
 ];
 rr:predicateObjectMap [
-	rr:predicate  onto:_pyrml_mapper_generated_id ;
+	rr:predicate  onto:hasPlatform ;
 	rr:objectMap [
-		rml:reference "_pyrml_mapper_generated_id";
+		rml:reference "hasPlatform";
 	];
 ];
 rr:predicateObjectMap [
-	rr:predicate  onto:hasProductType ;
+	rr:predicate  onto:hasTimestamp ;
 	rr:objectMap [
-		rml:reference "hasProductType";
+		rml:reference "hasTimestamp";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:ce660c4913ec548966d1fb1ecd9dd1d3_pyrml_mapper_generated_id ;
+	rr:objectMap [
+		rml:reference "ce660c4913ec548966d1fb1ecd9dd1d3_pyrml_mapper_generated_id";
 	];
 ];
 rr:predicateObjectMap [
@@ -71,15 +59,27 @@ rr:predicateObjectMap [
 	];
 ];
 rr:predicateObjectMap [
-	rr:predicate  onto:hasInterferometricWide ;
+	rr:predicate  onto:hasProcessingLevel ;
 	rr:objectMap [
-		rml:reference "hasInterferometricWide";
+		rml:reference "hasProcessingLevel";
 	];
 ];
 rr:predicateObjectMap [
-	rr:predicate  onto:_pyrml_mapper_parent_id ;
+	rr:predicate  onto:ce660c4913ec548966d1fb1ecd9dd1d3_pyrml_mapper_parent_id ;
 	rr:objectMap [
-		rml:reference "_pyrml_mapper_parent_id";
+		rml:reference "ce660c4913ec548966d1fb1ecd9dd1d3_pyrml_mapper_parent_id";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:hasProductType ;
+	rr:objectMap [
+		rml:reference "hasProductType";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:type ;
+	rr:objectMap [
+		rml:reference "type";
 	];
 ].
 
@@ -90,14 +90,14 @@ rml:logicalSource [
         rml:referenceFormulation ql:JSONPath;
 ];
 rr:subjectMap [
-    rr:template "https://example.org/resource/{_pyrml_mapper_generated_id}";
+    rr:template "https://ai-team-uoa.github.io/LTEOI-BIDS-2025/resource/{ce660c4913ec548966d1fb1ecd9dd1d3_pyrml_mapper_generated_id}";
 	rr:class onto:sentinel1
 ];
 
 rr:predicateObjectMap [
 	rr:predicate  ogc:hasGeometry ;
 	rr:objectMap [
-		rr:template "https://example.org/resource/Geometry{_pyrml_mapper_generated_id}";
+		rr:template "https://ai-team-uoa.github.io/LTEOI-BIDS-2025/resource/Geometry{_pyrml_mapper_generated_id}";
 	];
 ];
 rr:predicateObjectMap [
@@ -105,8 +105,8 @@ rr:predicateObjectMap [
 	rr:objectMap [
 		rr:parentTriplesMap <#properties0>;
 		rr:joinCondition [
-			rr:child  "_pyrml_mapper_generated_id" ;
-			rr:parent "_pyrml_mapper_parent_id" ;
+			rr:child  "ce660c4913ec548966d1fb1ecd9dd1d3_pyrml_mapper_generated_id" ;
+			rr:parent "ce660c4913ec548966d1fb1ecd9dd1d3_pyrml_mapper_parent_id" ;
 		];
 	];
 ].
@@ -118,7 +118,7 @@ rml:logicalSource [
         rml:referenceFormulation ql:JSONPath;
 ];
 rr:subjectMap [
-    rr:template "https://example.org/resource/Geometry{_pyrml_mapper_generated_id}";
+    rr:template "https://ai-team-uoa.github.io/LTEOI-BIDS-2025/resource/Geometry{ce660c4913ec548966d1fb1ecd9dd1d3_pyrml_mapper_generated_id}";
 ];
 
 rr:predicateObjectMap [
