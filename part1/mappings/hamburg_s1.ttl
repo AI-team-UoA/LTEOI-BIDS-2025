@@ -11,45 +11,21 @@
 @prefix resource: <https://ai-team-uoa.github.io/LTEOI-BIDS-2025/resource/>.
 
 
-<#properties0>  a rr:TriplesMap;
+<#properties0ce660c4913ec548966d1fb1ecd9dd1d3>  a rr:TriplesMap;
 rml:logicalSource [
         rml:source "./geojsons/_ce660c4913ec548966d1fb1ecd9dd1d3hamburg_s1.geojson";
         rml:iterator "$.features[*].properties";
         rml:referenceFormulation ql:JSONPath;
 ];
 rr:subjectMap [
-    rr:template "https://ai-team-uoa.github.io/LTEOI-BIDS-2025/resource/{ce660c4913ec548966d1fb1ecd9dd1d3_pyrml_mapper_generated_id}";
+    rr:template "https://ai-team-uoa.github.io/LTEOI-BIDS-2025/resource/c916badda01702e3d35b141fa1fc15a0_{ce660c4913ec548966d1fb1ecd9dd1d3_pyrml_mapper_generated_id}";
 	rr:class onto:properties;
 ];
 
 rr:predicateObjectMap [
-	rr:predicate  onto:hasInterferometricWide ;
+	rr:predicate  onto:hasProductType ;
 	rr:objectMap [
-		rml:reference "hasInterferometricWide";
-	];
-];
-rr:predicateObjectMap [
-	rr:predicate  onto:hasVerticalVertical ;
-	rr:objectMap [
-		rml:reference "hasVerticalVertical";
-	];
-];
-rr:predicateObjectMap [
-	rr:predicate  onto:hasPlatform ;
-	rr:objectMap [
-		rml:reference "hasPlatform";
-	];
-];
-rr:predicateObjectMap [
-	rr:predicate  onto:hasTimestamp ;
-	rr:objectMap [
-		rml:reference "hasTimestamp";
-	];
-];
-rr:predicateObjectMap [
-	rr:predicate  onto:ce660c4913ec548966d1fb1ecd9dd1d3_pyrml_mapper_generated_id ;
-	rr:objectMap [
-		rml:reference "ce660c4913ec548966d1fb1ecd9dd1d3_pyrml_mapper_generated_id";
+		rml:reference "hasProductType";
 	];
 ];
 rr:predicateObjectMap [
@@ -59,9 +35,22 @@ rr:predicateObjectMap [
 	];
 ];
 rr:predicateObjectMap [
+	rr:predicate  onto:type ;
+	rr:objectMap [
+		rml:reference "type";
+	];
+];
+rr:predicateObjectMap [
 	rr:predicate  onto:hasProcessingLevel ;
 	rr:objectMap [
 		rml:reference "hasProcessingLevel";
+		rr:datatype xsd:integer;
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:hasInterferometricWide ;
+	rr:objectMap [
+		rml:reference "hasInterferometricWide";
 	];
 ];
 rr:predicateObjectMap [
@@ -71,39 +60,52 @@ rr:predicateObjectMap [
 	];
 ];
 rr:predicateObjectMap [
-	rr:predicate  onto:hasProductType ;
+	rr:predicate  onto:hasVerticalVertical ;
 	rr:objectMap [
-		rml:reference "hasProductType";
+		rml:reference "hasVerticalVertical";
 	];
 ];
 rr:predicateObjectMap [
-	rr:predicate  onto:type ;
+	rr:predicate  onto:hasTimestamp ;
 	rr:objectMap [
-		rml:reference "type";
+		rml:reference "hasTimestamp";
+		rr:datatype xsd:dateTime;
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:hasPlatform ;
+	rr:objectMap [
+		rml:reference "hasPlatform";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:ce660c4913ec548966d1fb1ecd9dd1d3_pyrml_mapper_generated_id ;
+	rr:objectMap [
+		rml:reference "ce660c4913ec548966d1fb1ecd9dd1d3_pyrml_mapper_generated_id";
 	];
 ].
 
-<#FeatureMap>  a rr:TriplesMap;
+<#FeatureMapce660c4913ec548966d1fb1ecd9dd1d3>  a rr:TriplesMap;
 rml:logicalSource [
         rml:source "./geojsons/_ce660c4913ec548966d1fb1ecd9dd1d3hamburg_s1.geojson";
         rml:iterator "$.features[*]";
         rml:referenceFormulation ql:JSONPath;
 ];
 rr:subjectMap [
-    rr:template "https://ai-team-uoa.github.io/LTEOI-BIDS-2025/resource/{ce660c4913ec548966d1fb1ecd9dd1d3_pyrml_mapper_generated_id}";
-	rr:class onto:sentinel1
+    rr:template "https://ai-team-uoa.github.io/LTEOI-BIDS-2025/resource/6543bdc5b41af38e5076a6c08d88304d_{ce660c4913ec548966d1fb1ecd9dd1d3_pyrml_mapper_generated_id}";
+	rr:class onto:sentinel1;
 ];
 
 rr:predicateObjectMap [
 	rr:predicate  ogc:hasGeometry ;
 	rr:objectMap [
-		rr:template "https://ai-team-uoa.github.io/LTEOI-BIDS-2025/resource/Geometry{_pyrml_mapper_generated_id}";
+		rr:template "https://ai-team-uoa.github.io/LTEOI-BIDS-2025/resource/Geometry_09f15d0f120a1f8c220c5598ea8a5f4a_{ce660c4913ec548966d1fb1ecd9dd1d3_pyrml_mapper_generated_id}";
 	];
 ];
 rr:predicateObjectMap [
 	rr:predicate  onto:propertiesLink ;
 	rr:objectMap [
-		rr:parentTriplesMap <#properties0>;
+		rr:parentTriplesMap <#properties0ce660c4913ec548966d1fb1ecd9dd1d3>;
 		rr:joinCondition [
 			rr:child  "ce660c4913ec548966d1fb1ecd9dd1d3_pyrml_mapper_generated_id" ;
 			rr:parent "ce660c4913ec548966d1fb1ecd9dd1d3_pyrml_mapper_parent_id" ;
@@ -111,14 +113,14 @@ rr:predicateObjectMap [
 	];
 ].
 
-<#GeometryMap>  a rr:TriplesMap;
+<#GeometryMapce660c4913ec548966d1fb1ecd9dd1d3>  a rr:TriplesMap;
 rml:logicalSource [
         rml:source "./geojsons/_ce660c4913ec548966d1fb1ecd9dd1d3hamburg_s1.geojson";
         rml:iterator "$.features[*]";
         rml:referenceFormulation ql:JSONPath;
 ];
 rr:subjectMap [
-    rr:template "https://ai-team-uoa.github.io/LTEOI-BIDS-2025/resource/Geometry{ce660c4913ec548966d1fb1ecd9dd1d3_pyrml_mapper_generated_id}";
+    rr:template "https://ai-team-uoa.github.io/LTEOI-BIDS-2025/resource/Geometry_09f15d0f120a1f8c220c5598ea8a5f4a_{ce660c4913ec548966d1fb1ecd9dd1d3_pyrml_mapper_generated_id}";
 ];
 
 rr:predicateObjectMap [

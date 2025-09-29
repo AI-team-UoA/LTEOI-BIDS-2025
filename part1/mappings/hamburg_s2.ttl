@@ -11,53 +11,17 @@
 @prefix resource: <https://ai-team-uoa.github.io/LTEOI-BIDS-2025/resource/>.
 
 
-<#properties0>  a rr:TriplesMap;
+<#properties09466f66829f16035df489f256eed1cdb>  a rr:TriplesMap;
 rml:logicalSource [
         rml:source "./geojsons/_9466f66829f16035df489f256eed1cdbhamburg_s2.geojson";
         rml:iterator "$.features[*].properties";
         rml:referenceFormulation ql:JSONPath;
 ];
 rr:subjectMap [
-    rr:template "https://ai-team-uoa.github.io/LTEOI-BIDS-2025/resource/{9466f66829f16035df489f256eed1cdb_pyrml_mapper_generated_id}";
+    rr:template "https://ai-team-uoa.github.io/LTEOI-BIDS-2025/resource/e72e3951d77d5a0b7275f3eb302dd65d_{9466f66829f16035df489f256eed1cdb_pyrml_mapper_generated_id}";
 	rr:class onto:properties;
 ];
 
-rr:predicateObjectMap [
-	rr:predicate  onto:hasSunAzimuth ;
-	rr:objectMap [
-		rml:reference "hasSunAzimuth";
-	];
-];
-rr:predicateObjectMap [
-	rr:predicate  onto:9466f66829f16035df489f256eed1cdb_pyrml_mapper_parent_id ;
-	rr:objectMap [
-		rml:reference "9466f66829f16035df489f256eed1cdb_pyrml_mapper_parent_id";
-	];
-];
-rr:predicateObjectMap [
-	rr:predicate  onto:hasMediumProbaCloudsPercentage ;
-	rr:objectMap [
-		rml:reference "hasMediumProbaCloudsPercentage";
-	];
-];
-rr:predicateObjectMap [
-	rr:predicate  onto:9466f66829f16035df489f256eed1cdb_pyrml_mapper_generated_id ;
-	rr:objectMap [
-		rml:reference "9466f66829f16035df489f256eed1cdb_pyrml_mapper_generated_id";
-	];
-];
-rr:predicateObjectMap [
-	rr:predicate  onto:hasLicense ;
-	rr:objectMap [
-		rml:reference "hasLicense";
-	];
-];
-rr:predicateObjectMap [
-	rr:predicate  onto:derivedFrom ;
-	rr:objectMap [
-		rml:reference "derivedFrom";
-	];
-];
 rr:predicateObjectMap [
 	rr:predicate  onto:hasProductType ;
 	rr:objectMap [
@@ -65,21 +29,23 @@ rr:predicateObjectMap [
 	];
 ];
 rr:predicateObjectMap [
-	rr:predicate  onto:hasTimeliness ;
+	rr:predicate  onto:hasNotVegetatedPercentage ;
 	rr:objectMap [
-		rml:reference "hasTimeliness";
+		rml:reference "hasNotVegetatedPercentage";
+		rr:datatype xsd:double;
 	];
 ];
 rr:predicateObjectMap [
-	rr:predicate  onto:hasWaterPercentage ;
+	rr:predicate  onto:hasCloudCover ;
 	rr:objectMap [
-		rml:reference "hasWaterPercentage";
+		rml:reference "hasCloudCover";
+		rr:datatype xsd:double;
 	];
 ];
 rr:predicateObjectMap [
-	rr:predicate  onto:hasTimestamp ;
+	rr:predicate  onto:type ;
 	rr:objectMap [
-		rml:reference "hasTimestamp";
+		rml:reference "type";
 	];
 ];
 rr:predicateObjectMap [
@@ -92,18 +58,54 @@ rr:predicateObjectMap [
 	rr:predicate  onto:hasSnowIcePercentage ;
 	rr:objectMap [
 		rml:reference "hasSnowIcePercentage";
+		rr:datatype xsd:double;
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:hasTimestamp ;
+	rr:objectMap [
+		rml:reference "hasTimestamp";
+		rr:datatype xsd:dateTime;
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:hasTimeliness ;
+	rr:objectMap [
+		rml:reference "hasTimeliness";
+		rr:datatype xsd:double;
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:derivedFrom ;
+	rr:objectMap [
+		rml:reference "derivedFrom";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:9466f66829f16035df489f256eed1cdb_pyrml_mapper_generated_id ;
+	rr:objectMap [
+		rml:reference "9466f66829f16035df489f256eed1cdb_pyrml_mapper_generated_id";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:hasThinCirrusPercentage ;
+	rr:objectMap [
+		rml:reference "hasThinCirrusPercentage";
+		rr:datatype xsd:double;
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:hasMediumProbaCloudsPercentage ;
+	rr:objectMap [
+		rml:reference "hasMediumProbaCloudsPercentage";
+		rr:datatype xsd:double;
 	];
 ];
 rr:predicateObjectMap [
 	rr:predicate  onto:hasUnclassifiedPercentage ;
 	rr:objectMap [
 		rml:reference "hasUnclassifiedPercentage";
-	];
-];
-rr:predicateObjectMap [
-	rr:predicate  onto:hasVegetationPercentage ;
-	rr:objectMap [
-		rml:reference "hasVegetationPercentage";
+		rr:datatype xsd:double;
 	];
 ];
 rr:predicateObjectMap [
@@ -113,21 +115,36 @@ rr:predicateObjectMap [
 	];
 ];
 rr:predicateObjectMap [
-	rr:predicate  onto:hasCloudCover ;
+	rr:predicate  onto:hasSunAzimuth ;
 	rr:objectMap [
-		rml:reference "hasCloudCover";
+		rml:reference "hasSunAzimuth";
+		rr:datatype xsd:double;
 	];
 ];
 rr:predicateObjectMap [
-	rr:predicate  onto:hasNotVegetatedPercentage ;
+	rr:predicate  onto:9466f66829f16035df489f256eed1cdb_pyrml_mapper_parent_id ;
 	rr:objectMap [
-		rml:reference "hasNotVegetatedPercentage";
+		rml:reference "9466f66829f16035df489f256eed1cdb_pyrml_mapper_parent_id";
 	];
 ];
 rr:predicateObjectMap [
-	rr:predicate  onto:hasThinCirrusPercentage ;
+	rr:predicate  onto:hasLicense ;
 	rr:objectMap [
-		rml:reference "hasThinCirrusPercentage";
+		rml:reference "hasLicense";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:hasVegetationPercentage ;
+	rr:objectMap [
+		rml:reference "hasVegetationPercentage";
+		rr:datatype xsd:double;
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:hasWaterPercentage ;
+	rr:objectMap [
+		rml:reference "hasWaterPercentage";
+		rr:datatype xsd:double;
 	];
 ];
 rr:predicateObjectMap [
@@ -135,35 +152,29 @@ rr:predicateObjectMap [
 	rr:objectMap [
 		rml:reference "hasPlatform";
 	];
-];
-rr:predicateObjectMap [
-	rr:predicate  onto:type ;
-	rr:objectMap [
-		rml:reference "type";
-	];
 ].
 
-<#FeatureMap>  a rr:TriplesMap;
+<#FeatureMap9466f66829f16035df489f256eed1cdb>  a rr:TriplesMap;
 rml:logicalSource [
         rml:source "./geojsons/_9466f66829f16035df489f256eed1cdbhamburg_s2.geojson";
         rml:iterator "$.features[*]";
         rml:referenceFormulation ql:JSONPath;
 ];
 rr:subjectMap [
-    rr:template "https://ai-team-uoa.github.io/LTEOI-BIDS-2025/resource/{9466f66829f16035df489f256eed1cdb_pyrml_mapper_generated_id}";
-	rr:class onto:sentinel2
+    rr:template "https://ai-team-uoa.github.io/LTEOI-BIDS-2025/resource/3347ae3d52bfc3250a8f64522b7a8af3_{9466f66829f16035df489f256eed1cdb_pyrml_mapper_generated_id}";
+	rr:class onto:sentinel2;
 ];
 
 rr:predicateObjectMap [
 	rr:predicate  ogc:hasGeometry ;
 	rr:objectMap [
-		rr:template "https://ai-team-uoa.github.io/LTEOI-BIDS-2025/resource/Geometry{_pyrml_mapper_generated_id}";
+		rr:template "https://ai-team-uoa.github.io/LTEOI-BIDS-2025/resource/Geometry_4fa8f1aef0ba03e17d7448df2eab85c3_{9466f66829f16035df489f256eed1cdb_pyrml_mapper_generated_id}";
 	];
 ];
 rr:predicateObjectMap [
 	rr:predicate  onto:propertiesLink ;
 	rr:objectMap [
-		rr:parentTriplesMap <#properties0>;
+		rr:parentTriplesMap <#properties09466f66829f16035df489f256eed1cdb>;
 		rr:joinCondition [
 			rr:child  "9466f66829f16035df489f256eed1cdb_pyrml_mapper_generated_id" ;
 			rr:parent "9466f66829f16035df489f256eed1cdb_pyrml_mapper_parent_id" ;
@@ -171,14 +182,14 @@ rr:predicateObjectMap [
 	];
 ].
 
-<#GeometryMap>  a rr:TriplesMap;
+<#GeometryMap9466f66829f16035df489f256eed1cdb>  a rr:TriplesMap;
 rml:logicalSource [
         rml:source "./geojsons/_9466f66829f16035df489f256eed1cdbhamburg_s2.geojson";
         rml:iterator "$.features[*]";
         rml:referenceFormulation ql:JSONPath;
 ];
 rr:subjectMap [
-    rr:template "https://ai-team-uoa.github.io/LTEOI-BIDS-2025/resource/Geometry{9466f66829f16035df489f256eed1cdb_pyrml_mapper_generated_id}";
+    rr:template "https://ai-team-uoa.github.io/LTEOI-BIDS-2025/resource/Geometry_4fa8f1aef0ba03e17d7448df2eab85c3_{9466f66829f16035df489f256eed1cdb_pyrml_mapper_generated_id}";
 ];
 
 rr:predicateObjectMap [

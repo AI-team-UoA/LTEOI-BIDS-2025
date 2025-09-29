@@ -11,27 +11,21 @@
 @prefix resource: <https://ai-team-uoa.github.io/LTEOI-BIDS-2025/resource/>.
 
 
-<#properties0>  a rr:TriplesMap;
+<#properties07305c717684f8e142ada60ab9fb2ab0b>  a rr:TriplesMap;
 rml:logicalSource [
         rml:source "./geojsons/_7305c717684f8e142ada60ab9fb2ab0bhamburg.geojson";
         rml:iterator "$.features[*].properties";
         rml:referenceFormulation ql:JSONPath;
 ];
 rr:subjectMap [
-    rr:template "https://ai-team-uoa.github.io/LTEOI-BIDS-2025/resource/{7305c717684f8e142ada60ab9fb2ab0b_pyrml_mapper_generated_id}";
+    rr:template "https://ai-team-uoa.github.io/LTEOI-BIDS-2025/resource/08b5e0fe16eaf888498e64aa1b2937c8_{7305c717684f8e142ada60ab9fb2ab0b_pyrml_mapper_generated_id}";
 	rr:class onto:properties;
 ];
 
 rr:predicateObjectMap [
-	rr:predicate  onto:7305c717684f8e142ada60ab9fb2ab0b_pyrml_mapper_generated_id ;
+	rr:predicate  onto:type ;
 	rr:objectMap [
-		rml:reference "7305c717684f8e142ada60ab9fb2ab0b_pyrml_mapper_generated_id";
-	];
-];
-rr:predicateObjectMap [
-	rr:predicate  onto:inContinent ;
-	rr:objectMap [
-		rml:reference "inContinent";
+		rml:reference "type";
 	];
 ];
 rr:predicateObjectMap [
@@ -41,15 +35,9 @@ rr:predicateObjectMap [
 	];
 ];
 rr:predicateObjectMap [
-	rr:predicate  onto:type ;
+	rr:predicate  onto:hasISO3Code ;
 	rr:objectMap [
-		rml:reference "type";
-	];
-];
-rr:predicateObjectMap [
-	rr:predicate  onto:hasMapCode ;
-	rr:objectMap [
-		rml:reference "hasMapCode";
+		rml:reference "hasISO3Code";
 	];
 ];
 rr:predicateObjectMap [
@@ -62,35 +50,48 @@ rr:predicateObjectMap [
 	rr:predicate  onto:hasArea ;
 	rr:objectMap [
 		rml:reference "hasArea";
+		rr:datatype xsd:double;
 	];
 ];
 rr:predicateObjectMap [
-	rr:predicate  onto:hasISO3Code ;
+	rr:predicate  onto:hasMapCode ;
 	rr:objectMap [
-		rml:reference "hasISO3Code";
+		rml:reference "hasMapCode";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:inContinent ;
+	rr:objectMap [
+		rml:reference "inContinent";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicate  onto:7305c717684f8e142ada60ab9fb2ab0b_pyrml_mapper_generated_id ;
+	rr:objectMap [
+		rml:reference "7305c717684f8e142ada60ab9fb2ab0b_pyrml_mapper_generated_id";
 	];
 ].
 
-<#FeatureMap>  a rr:TriplesMap;
+<#FeatureMap7305c717684f8e142ada60ab9fb2ab0b>  a rr:TriplesMap;
 rml:logicalSource [
         rml:source "./geojsons/_7305c717684f8e142ada60ab9fb2ab0bhamburg.geojson";
         rml:iterator "$.features[*]";
         rml:referenceFormulation ql:JSONPath;
 ];
 rr:subjectMap [
-    rr:template "https://ai-team-uoa.github.io/LTEOI-BIDS-2025/resource/{7305c717684f8e142ada60ab9fb2ab0b_pyrml_mapper_generated_id}";
+    rr:template "https://ai-team-uoa.github.io/LTEOI-BIDS-2025/resource/54d45ac715ef82eb94ea4bbf57b5211c_{7305c717684f8e142ada60ab9fb2ab0b_pyrml_mapper_generated_id}";
 ];
 
 rr:predicateObjectMap [
 	rr:predicate  ogc:hasGeometry ;
 	rr:objectMap [
-		rr:template "https://ai-team-uoa.github.io/LTEOI-BIDS-2025/resource/Geometry{_pyrml_mapper_generated_id}";
+		rr:template "https://ai-team-uoa.github.io/LTEOI-BIDS-2025/resource/Geometry_6156069b68ef1a81a18b3431e5f20a50_{7305c717684f8e142ada60ab9fb2ab0b_pyrml_mapper_generated_id}";
 	];
 ];
 rr:predicateObjectMap [
 	rr:predicate  onto:propertiesLink ;
 	rr:objectMap [
-		rr:parentTriplesMap <#properties0>;
+		rr:parentTriplesMap <#properties07305c717684f8e142ada60ab9fb2ab0b>;
 		rr:joinCondition [
 			rr:child  "7305c717684f8e142ada60ab9fb2ab0b_pyrml_mapper_generated_id" ;
 			rr:parent "7305c717684f8e142ada60ab9fb2ab0b_pyrml_mapper_parent_id" ;
@@ -98,14 +99,14 @@ rr:predicateObjectMap [
 	];
 ].
 
-<#GeometryMap>  a rr:TriplesMap;
+<#GeometryMap7305c717684f8e142ada60ab9fb2ab0b>  a rr:TriplesMap;
 rml:logicalSource [
         rml:source "./geojsons/_7305c717684f8e142ada60ab9fb2ab0bhamburg.geojson";
         rml:iterator "$.features[*]";
         rml:referenceFormulation ql:JSONPath;
 ];
 rr:subjectMap [
-    rr:template "https://ai-team-uoa.github.io/LTEOI-BIDS-2025/resource/Geometry{7305c717684f8e142ada60ab9fb2ab0b_pyrml_mapper_generated_id}";
+    rr:template "https://ai-team-uoa.github.io/LTEOI-BIDS-2025/resource/Geometry_6156069b68ef1a81a18b3431e5f20a50_{7305c717684f8e142ada60ab9fb2ab0b_pyrml_mapper_generated_id}";
 ];
 
 rr:predicateObjectMap [
