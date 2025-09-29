@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Satellite Image Retrieval</title>
+
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;margin:24px}
+    label{display:block;margin-bottom:8px}
+    input[type=text]{width:100%;box-sizing:border-box;padding:8px;font-size:14px}
+    button{margin-top:8px;padding:8px 12px;font-size:14px}
+    pre{background:#f6f8fa;border:1px solid #e1e4e8;padding:12px;white-space:pre-wrap;word-break:break-word}
+    .muted{color:#666;font-size:13px}
+  </style>
+
+   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+</head>
+
+<body>
+
+  <h3>Satellite Image Retriever</h3>
+
+  <!-- Input -->
+  <div>
+    <label for="q">Question</label>
+    <input id="q" type="text" placeholder='Give me 5 sentinel-1 images of Hamburg' value="Give me 5 sentinel-1 images of Hamburg" />
+    <div class="muted">POSTs JSON {"question":"..."} to <code>http://localhost:1699/ask</code></div>
+    <button id="send">Send</button>
+  </div>
+
+  <!-- Textual results -->
+  <h4>Result</h4>
+  <pre id="out">(no result yet)</pre>
+
+  <!-- Our website's logic -->
+  <script>
+    const sendBtn = document.getElementById('send');
+    const qInput = document.getElementById('q');
+    const out = document.getElementById('out');
+
+    async function sendQuestion(){
+      const question = qInput.value.trim();
+      if (!question) { // Check for empty input
+        out.textContent = 'Please enter a question.'; 
+        return; 
+      }
+
+      sendBtn.disabled = true;
+      sendBtn.textContent = 'Sending...';
+      out.textContent = 'Waiting for response...';
+
+      try {
+        const res = await fetch('http://localhost:1699/ask', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ question })
+        });
+
+        const text = await res.text();
+
+        let resultData = [];
+        try{
+          const j = JSON.parse(text);
+          if(j.result){
+            resultData = j.result;
+            out.textContent = JSON.stringify(resultData, null, 2);
+          } else {
+            out.textContent = '(no result field in response)\n' + JSON.stringify(j, null, 2);
+          }
+        } catch(e){
+          out.textContent = text;
+        }
+      } catch (err) {
+        out.textContent = 'Fetch error:\n' + err;
+      } finally{
+        sendBtn.disabled = false;
+        sendBtn.textContent = 'Send';
+      }
+    }
+
+    sendBtn.addEventListener('click', sendQuestion);
+    qInput.addEventListener('keydown', (e)=>{ if(e.key === 'Enter'){ sendQuestion() } });
+  </script>
+</body>
+</html>

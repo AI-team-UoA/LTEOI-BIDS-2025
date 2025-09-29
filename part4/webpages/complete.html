@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Satellite Image Retrieval</title>
+
+    <style>
+        body{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;margin:24px}
+        label{display:block;margin-bottom:8px}
+        input[type=text]{width:100%;box-sizing:border-box;padding:8px;font-size:14px}
+        button{margin-top:8px;padding:8px 12px;font-size:14px}
+        pre{background:#f6f8fa;border:1px solid #e1e4e8;padding:12px;white-space:pre-wrap;word-break:break-word}
+        .muted{color:#666;font-size:13px}
+    </style>
+
+    <!-- MUST INCLUDE LEAFLET CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>
+    <!-- END -->
+</head>
+
+<body>
+
+  <h3>Satellite Image Retriever</h3>
+
+  <div>
+    <label for="q">Question</label>
+    <input id="q" type="text" placeholder='Give me 5 sentinel-1 images of Hamburg' value="Give me 5 sentinel-1 images of Hamburg" />
+    <div class="muted">POSTs JSON {"question":"..."} to <code>http://localhost:1699/ask</code></div>
+    <button id="send">Send</button>
+  </div>
+
+  <h4>Result</h4>
+  <pre id="out">(no result yet)</pre>
+
+  <h4>Map</h4>
+  <!-- Our leaflet map -->
+  <!-- IMPORTANT: Leaflet requires a map container and also a set height. -->
+  <div id="map" style="height: 500px; width: 100%; margin-top: 16px;"></div>
+  <!-- END -->
+
+  <!-- Leaflet and WKT imports -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/wellknown/wellknown.js"></script>
+  <!-- END -->
+
+  <script>
+    const sendBtn = document.getElementById('send');
+    const qInput = document.getElementById('q');
+    const out = document.getElementById('out');
+    const mapDiv = document.getElementById('map');
+
+    // Initialize Leaflet map
+    const map = L.map(mapDiv).setView([53.5511, 9.9937], 6); // Centered on Hamburg (according to ChatGPT at least :-)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19
+    }).addTo(map);
+    // END
+
+    // Function to get the WKT for a given URI. This endpoint was built into Pythia to mirror TerraQ's functionality.
+    async function getWKT(uri){
+      const res = await fetch('http://localhost:1699/wkt', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ uri })
+      });
+      const j = await res.json();
+      return j.wkt;
+    }
+    // END
+
+    async function sendQuestion(){
+      const question = qInput.value.trim();
+      if (!question) {
+        out.textContent = 'Please enter a question.'; 
+        return; 
+      }
+
+      sendBtn.disabled = true;
+      sendBtn.textContent = 'Sending...';
+      out.textContent = 'Waiting for response...';
+
+      try {
+        const res = await fetch('http://localhost:1699/ask', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ question })
+        });
+
+        const text = await res.text();
+
+        let resultData = [];
+        try{
+          const j = JSON.parse(text);
+          if(j.result){
+            resultData = j.result;
+            out.textContent = JSON.stringify(resultData, null, 2);
+          } else {
+            out.textContent = '(no result field in response)\n' + JSON.stringify(j, null, 2);
+          }
+        } catch(e){
+          out.textContent = text;
+        }
+
+        // Clear existing layers
+        map.eachLayer(layer => {
+          if(layer instanceof L.Polygon || layer instanceof L.Marker) map.removeLayer(layer);
+        });
+
+        // For each entry other than first (CSV header)
+        for(let i=1; i<resultData.length; i++){
+          const [uri, wkt] = resultData[i];
+          let geometry = wkt;
+
+          if(!geometry){
+            geometry = await getWKT(uri);
+          }
+
+          if(geometry){
+            const geojson = wellknown.parse(geometry);
+            if(geojson){
+              const layer = L.geoJSON(geojson).addTo(map);
+              map.fitBounds(layer.getBounds());
+            }
+          }
+        }
+        // END
+      } catch (err) {
+        out.textContent = 'Fetch error:\n' + err;
+      } finally{
+        sendBtn.disabled = false;
+        sendBtn.textContent = 'Send';
+      }
+    }
+
+
+    sendBtn.addEventListener('click', sendQuestion);
+    qInput.addEventListener('keydown', (e)=>{ if(e.key === 'Enter'){ sendQuestion() } });
+  </script>
+</body>
+</html>
