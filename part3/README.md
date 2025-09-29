@@ -142,7 +142,7 @@ After Pythia has finished loading we can try asking it some questions in natural
 ### Examples
 
 #### Give me 5 sentinel-2 images.
-```sql
+```sparql
 SELECT DISTINCT ?image WHERE {
   ?image <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://ai-team-uoa.github.io/LTEOI-BIDS-2025/ontology/sentinel2> .
 }
@@ -150,7 +150,7 @@ LIMIT 5
 ```
 
 #### Give me 5 sentinel-2 images of Hamburg.
-```sql
+```sparql
 SELECT DISTINCT ?sentinel2Image ?imageURL WHERE {
   <https://ai-team-uoa.github.io/LTEOI-BIDS-2025/resource/54d45ac715ef82eb94ea4bbf57b5211c_1> <http://www.opengis.net/ont/geosparql#hasGeometry> ?hamburgGeomNode .
   ?hamburgGeomNode <http://www.opengis.net/ont/geosparql#asWKT> ?hamburgWKT .
@@ -168,7 +168,7 @@ LIMIT 5
 ```
 
 #### Give me 5 sentinel-2 images of Hamburg with less than 10% cloud coverage.
-```sql
+```sparql
 SELECT DISTINCT ?image WHERE {
   BIND(<https://ai-team-uoa.github.io/LTEOI-BIDS-2025/resource/54d45ac715ef82eb94ea4bbf57b5211c_1> AS ?hamburg)
   
