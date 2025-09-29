@@ -54,7 +54,7 @@ directory = os.fsencode(directory_in_str)
 for file in os.listdir(directory):
     filename = os.fsdecode(file)
     #The path to one of the geojson files e.g. /geojsons/hamburg.geojson
-    geojson_file = os.path.join(directory_in_str, filename,".nt")
+    geojson_file = os.path.join(directory_in_str, filename)
     #A string for our output file
     output_nt_file = change_to_nt(geojson_file,"nt")
 ```
@@ -89,7 +89,7 @@ directory_in_str = "./geojsons/"
 directory = os.fsencode(directory_in_str)
 for file in os.listdir(directory):
     filename = os.fsdecode(file)
-    geojson_file = os.path.join(directory_in_str, filename,".nt")
+    geojson_file = os.path.join(directory_in_str, filename)
     output_nt_file = change_to_nt(geojson_file,"nt")
     #Create the converter for GeoJSON files
     converter = GeoJSONConverter(geojson_file,output_nt_file,ontology_uri,resource_uri)
@@ -243,6 +243,7 @@ The generated output RDF files are available in the output/ directory. All the s
 - geojson_to_ntriples_naive.py: Naive method
 - geojson_to_mapping.py: RML method to generate mappings
 - mapping_to_triples.py: Mappings to RDF data generator
+
 
 
 
