@@ -136,6 +136,7 @@ select distinct ?s1 where {
     ?river geo:hasGeometry ?g_river .
     ?g_river geo:asWKT ?wkt_river .
     
-    FILTER(geof:sfIntersects(?wkt1, ?wkt_poi) && geof:sfIntersects(?wkt1,?wkt_river))
+    FILTER(geof:sfIntersects(?wkt_poi, ?wkt1) && geof:sfIntersects(?wkt_river, ?wkt1))
 }
+
 ```
