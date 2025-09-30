@@ -139,6 +139,15 @@ If I say "images that contain Athens" then show me images that fully contain Ath
 
 This text instructs Pythia to use `geof:sfIntersects` to express that an image contains something. In the case of satellite images this is a reasonable compromise between getting lots of images and accurate images.
 
+### NLTK
+If you have not used NLTK before on your machine, at this point it will probably start bugging you to install various resources. You can either follow its instructions or do the following:
+
+```sh
+> python
+> import nltk
+> nltk.download('all')
+```
+
 ### Queries
 
 We are now ready to proceed with running Pythia for the first time:
