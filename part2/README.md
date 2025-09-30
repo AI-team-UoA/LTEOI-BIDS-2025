@@ -54,6 +54,15 @@ For Windows intsallations you can follow this [guide](https://docs.docker.com/de
 
 5. A GraphDB instance will be online on http://localhost:7200 with our knowledge graph loaded and ready to be queried!
 
+#### Live endpoints
+
+For the purposes of this tutorial we have setup 6 live endpoints. This will be online during the tutorial and will be disabled afterwards. The endpoints are:
+- http://88.197.84.37:65031/
+- http://88.197.84.37:65032/
+- http://88.197.84.37:65033/
+- http://88.197.84.37:65034/
+- http://88.197.84.37:65035/
+- http://88.197.84.37:65036/
 
 ### 2) Querying our RDF graph through SPARQL
 
@@ -140,3 +149,4 @@ select distinct ?s1 where {
 }
 
 ```
+
