@@ -50,6 +50,16 @@ Let's make sure that everything is in order:
 
 If this command prints the version and copyright information of the software you are ready to move forward!
 
+### Compiling Java helpers
+
+Before we proceed with using Pythia we first need to compile a Java helper program (if we forget this step Pythia will remind use!).
+
+To do so we need to have Java installed and run the following command:
+
+```sh
+> cd tools/kg_entity_extractor && mvn package
+```
+
 ## Using Pythia on our Knowledge Graph
 
 ### Preparing Pythia to query our Knowledge Graph
