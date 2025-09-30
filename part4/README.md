@@ -11,7 +11,7 @@ Leaflet.js is a straightforward mapping/visualization library that also manages 
 Before we open our web page we must start the Pythia API server like so:
 
 ```sh
-> python pythia.py cli CUSTOM {kg-index-name}
+> python pythia.py server CUSTOM {kg-index-name}
 ```
 
 This opens a server on port `1699` with the network interface `0.0.0.0`. You can change these default via the `--host` and `--port` command line arguments.
