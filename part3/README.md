@@ -66,7 +66,7 @@ The three options that we will employ are:
 - `-t` is an option that tells Pythia how many processing threads to use. Since your knowledge graph is small, we can use a single thread.
 
 ```sh
-> python pythia.py index {kg-directory} --labels "https://example.org/ontology/propertiesLink->https://example.org/ontology/hasGADM_Name,https://example.org/ontology/propertiesLink->https://example.org/ontology/hasName" -t 1 --filter
+> python pythia.py index {kg-directory} --labels "https://ai-team-uoa.github.io/LTEOI-BIDS-2025/ontology/propertiesLink->https://ai-team-uoa.github.io/LTEOI-BIDS-2025/ontology/hasGADM_Name,https://ai-team-uoa.github.io/LTEOI-BIDS-2025/ontology/propertiesLink->https://ai-team-uoa.github.io/LTEOI-BIDS-2025/ontology/hasName" -t 1 --filter
 ```
 
 After a bit Pythia will prompt you about whether the given knowledge graph contains non-descriptive URIs. Our knowledge graph contains such URIs, so we will answer positively.
